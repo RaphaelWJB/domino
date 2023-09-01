@@ -1,0 +1,58 @@
+
+
+
+  <div class="card" *ngIf="listaJogadores$ | async as listaJogadores; else loading">
+    <div class="card-header" >
+      <div class="row">
+        <div class="col-10">
+          <h4>Jogadores</h4>
+        </div>
+        <div class="col float-right">
+          <button type="button" class="btn btn-primary" routerLink="/novo-jogador">
+            Novo jogador
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="row align-items-start">
+        <div class="col">
+          <table class="table table-hover" >
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Apelido</th>
+                <th scope="col">Gatos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let jogador of listaJogadores">
+                <th scope="row">{{jogador.id}}</th>
+                <td>{{jogador.nome}}</td>
+                <td>{{jogador.apelido}}</td>
+                <td>{{jogador.gatosNoite}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #loading>
+    <span>Carregando...</span>
+  </ng-template>
+
+
+
+
+  <div class="row">
+    <div class="col">
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" (click)="onSelectPlayers()">
+        Nova Partida
+      </button>
+    </div>
+  </div>

@@ -1,0 +1,67 @@
+{
+  "jogadores": [
+    {
+      "id": 1,
+      "nome": "Raphael",
+      "apelido": "Rp",
+      "gatosNoite": [],
+      "gatosRodada": []
+    },
+    {
+      "id": 2,
+      "nome": "Bruno",
+      "apelido": "B",
+      "gatosNoite": [],
+      "gatosRodada": []
+    },
+    {
+      "id": 3,
+      "nome": "Wesley",
+      "apelido": "W",
+      "gatosNoite": [],
+      "gatosRodada": []
+    },
+    {
+      "id": 4,
+      "nome": "Lucas",
+      "apelido": "L",
+      "gatosNoite": [],
+      "gatosRodada": []
+    },
+    {
+      "id": 5,
+      "nome": "Israel",
+      "apelido": "i",
+      "gatosNoite": [],
+      "gatosRodada": []
+    },
+    {
+      "id": 6,
+      "nome": "Farofa",
+      "apelido": "Rf",
+      "gatosNoite": [],
+      "gatosRodada": []
+    },
+    {
+      "id": 7,
+      "nome": "Rafael",
+      "apelido": "San",
+      "gatosNoite": [],
+      "gatosRodada": []
+    },
+    {
+      "id": 8,
+      "nome": "Fabricio",
+      "apelido": "Pastor",
+      "gatosNoite": [],
+      "gatosRodada": []
+    },
+    {
+      "nome": "Eurimar",
+      "apelido": "E",
+      "gatosNoite": [],
+      "gatosRodada": [],
+      "id": 9
+    }
+  ]
+}
