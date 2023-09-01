@@ -7,7 +7,7 @@ import { delay, take, tap } from 'rxjs';
   providedIn: 'root',
 })
 export class ListaJogadoresService {
-  private readonly API = 'http://localhost:3000/api';
+  private readonly API = 'https://api-domino-m59a.onrender.com/api';
 
   constructor(private http: HttpClient) {}
 
