@@ -1,2 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+.ajuste{
+  text-align: center;
+}
+
+@media (min-width: 575.98px) {
+  .ajuste{
+    text-align: right;
+
+  }
+}

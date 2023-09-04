@@ -1,21 +1,36 @@
 
 
+<div class="row mb-3">
+<div class="col-12 ajuste">
+  <button type="button" class="btn btn-primary me-4" (click)="onSelectPlayers()">
+    Nova Partida
+  </button>
+  <button type="button" class="btn btn-primary" routerLink="/novo-jogador">
+    Novo jogador
+  </button>
+</div>
+
+  <div class="col ajuste">
+    <!-- Button trigger modal -->
+
+  </div>
+</div>
+
 
   <div class="card" *ngIf="listaJogadores$ | async as listaJogadores; else loading">
+
     <div class="card-header" >
       <div class="row">
         <div class="col-10">
           <h4>Jogadores</h4>
         </div>
-        <div class="col float-right">
-          <button type="button" class="btn btn-primary" routerLink="/novo-jogador">
-            Novo jogador
-          </button>
-        </div>
       </div>
     </div>
     <div class="card-body">
-      <div class="row align-items-start">
+      <div class="row " *ngIf="listaJogadores.length == 0">
+        Nenhum jogador.
+      </div>
+      <div class="row align-items-start" *ngIf="listaJogadores.length > 0">
         <div class="col">
           <table class="table table-hover" >
             <thead>
@@ -24,14 +39,19 @@
                 <th scope="col">Nome</th>
                 <th scope="col">Apelido</th>
                 <th scope="col">Gatos</th>
+                <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let jogador of listaJogadores">
-                <th scope="row">{{jogador.id}}</th>
+                <th scope="row"></th>
                 <td>{{jogador.nome}}</td>
                 <td>{{jogador.apelido}}</td>
                 <td>{{jogador.gatosNoite}}</td>
+                <td>
+                  <button type="button" class="btn btn-outline-warning me-1" (click)="OnEdit(jogador)">Editar</button>
+                  <button type="button" class="btn btn-outline-danger" (click)="onDelete(jogador)">Excluir</button>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -46,13 +66,12 @@
   </ng-template>
 
 
-
-
-  <div class="row">
-    <div class="col">
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" (click)="onSelectPlayers()">
-        Nova Partida
-      </button>
+  <ng-template #deleteModal>
+    <div class="modal-body text-center">
+      <p>Tem certeza que deseja remover o jogador?</p>
+      <button type="button" class="btn btn-default" (click)="onConfirmeDelete()">Sim</button>
+      <button type="button" class="btn btn-primary" (click)="onDeclineDelete()">Não</button>
     </div>
-  </div>
+  </ng-template>
+
+

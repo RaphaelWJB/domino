@@ -16,6 +16,21 @@ export class ListaJogadoresService {
   }
 
   create(jogador: Jogadores) {
-    return this.http.post(this.API, jogador).pipe(take(1));
+    return this.http.post(this.API+"/post", jogador).pipe(take(1));
   }
+
+  delete(id: string) {
+    return this.http.delete(`${this.API}/delete/${id}`, { responseType: 'text' }).pipe(take(1))   //this.API+"/delete/", ${id}).pipe(take(1));
+  }
+
+  getOneById(id: string) {
+    console.log("Aqui ");
+
+    return this.http.get<Jogadores>(`${this.API}/getOne/${id}`).pipe(take(1));
+  }
+
+  update(jogador: Jogadores) {
+    return this.http.patch(`${this.API}/update/${jogador._id}`, jogador).pipe(take(1));
+  }
+
 }

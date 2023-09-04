@@ -5,9 +5,9 @@ import { JogadorFormComponent } from './jogador-form/jogador-form.component';
 import { JogoNoiteComponent } from './jogo-noite/jogo-noite.component';
 
 const routes: Routes = [
-  {path: '', component: ListaJogadoresComponent},
+  {path: '', component: ListaJogadoresComponent, pathMatch: 'full'},
   {path: 'novo-jogador', component: JogadorFormComponent},
-  {path: 'editar-jogador:id', component: JogadorFormComponent},
+  {path: 'editar-jogador/:id', component: JogadorFormComponent},
   {path: 'jogo-noite', component: JogoNoiteComponent }
 ];
 

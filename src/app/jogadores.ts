@@ -1,6 +1,6 @@
 export interface Jogadores {
-  id?: number;
-  nome: string;
+  _id?: string;
+  nome: string | null;
   apelido: string;
   gatosNoite: [];
   gatosRodada: [];
