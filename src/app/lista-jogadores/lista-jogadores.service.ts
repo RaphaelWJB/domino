@@ -12,8 +12,8 @@ export class ListaJogadoresService {
   //prod: boolean = false
 
 
-  //private readonly API = 'https://api-domino-m59a.onrender.com/api';
-  private readonly API = 'http://localhost:3000/api';
+  private readonly API = 'https://api-domino-m59a.onrender.com/api';
+  //private readonly API = 'http://localhost:3000/api';
 
   constructor(private http: HttpClient) {
   }
