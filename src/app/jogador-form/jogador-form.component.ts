@@ -24,6 +24,7 @@ export class JogadorFormComponent implements OnInit {
   bsModalRef?: BsModalRef;
   editar: boolean = false;
   jogador?: Jogadores
+  tituloPagina: string = 'Cadastrar novo jogador';
 
   constructor(private fb: FormBuilder, private service: ListaJogadoresService, private modalService: BsModalService, private route: ActivatedRoute,
     private router: Router,) { }
@@ -47,6 +48,8 @@ export class JogadorFormComponent implements OnInit {
         })
       )
       .subscribe((jogador: Jogadores) => {
+
+        this.tituloPagina = 'Editar jogador';
         this.jogador = jogador;
         this.updateForm(jogador)
       });
@@ -108,6 +111,7 @@ export class JogadorFormComponent implements OnInit {
           apelido: this.form.get('apelido')?.value || '',
           gatosNoite: this.jogador?.gatosNoite!,
           gatosRodada: this.jogador?.gatosRodada!,
+          totalGatos: this.jogador?.totalGatos!
         }
 
         console.log("Editar");
@@ -129,8 +133,12 @@ export class JogadorFormComponent implements OnInit {
           nome: this.form.get('nome')?.value || '',
           apelido: this.form.get('apelido')?.value || '',
           gatosNoite: [],
-          gatosRodada: []
+          gatosRodada: [],
+          totalGatos: 0
         }
+
+        console.log("Raphael ", jogador);
+
 
         this.service.create(jogador).subscribe(
           success => {

@@ -1,0 +1,22 @@
+<table class="table table-hover" >
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col-1">Pontos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let jogador of listaJogadores">
+      <td>{{jogador.nome}}</td>
+      <td colspan="1"><input type="number" class="form-control" [(ngModel)]="jogador.totalPontos" (ngModelChange)="onChangePontos(jogador.totalPontos)"></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="row">
+  <div class="col">
+    <button type="button" class="btn btn-primary me-4" (click)="contarGatos()" [disabled]="desabilitarBotaoEncerrarPartida">
+      Finalizar Rodada
+    </button>
+  </div>
+</div>

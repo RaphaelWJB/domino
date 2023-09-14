@@ -2,17 +2,24 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Jogadores } from '../jogadores';
 import { delay, take, tap } from 'rxjs';
+import { environment } from '../../../environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ListaJogadoresService {
-  private readonly API = 'https://api-domino-m59a.onrender.com/api';
 
-  constructor(private http: HttpClient) {}
+  //prod: boolean = false
+
+
+  //private readonly API = 'https://api-domino-m59a.onrender.com/api';
+  private readonly API = 'http://localhost:3000/api';
+
+  constructor(private http: HttpClient) {
+  }
 
   list() {
-    return this.http.get<Jogadores[]>(this.API+"/getAll").pipe(tap(console.log));
+    return this.http.get<Jogadores[]>(this.API+"/getAll").pipe();
   }
 
   create(jogador: Jogadores) {

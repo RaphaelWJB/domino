@@ -1,12 +1,41 @@
 <div class="modal-header">
-  <h4 class="modal-title pull-left">Titulo</h4>
+  <h4 class="modal-title">Selecione os jogadores da noite</h4>
   <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
     <span aria-hidden="true" class="visually-hidden">&times;</span>
   </button>
 </div>
 <div class="modal-body">
-  Aqui
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <table class="table table-hover" >
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let jogador of listaJogadores">
+            <th scope="row"><input class="form-check-input" type="checkbox" value="" [(ngModel)]="jogador.selecionado" (ngModelChange)="onClick()"></th>
+            <td>{{jogador.nome}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
 </div>
-<div class="modal-footer">
-  <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">Close Name</button>
+
+
+<div class="modal-footer justify-content-center">
+  <div class="row mb-3 ">
+    <div class="col-12 ajuste">
+      <button type="button" class="btn btn-primary me-4" (click)="prosseguir()">
+        Prosseguir
+      </button>
+      <button type="button" class="btn btn-primary" (click)="bsModalRef.hide()">
+        Cancelar
+      </button>
+    </div>
+
 </div>
