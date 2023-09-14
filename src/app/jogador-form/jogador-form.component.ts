@@ -159,6 +159,7 @@ export class JogadorFormComponent implements OnInit {
   }
 
   onCancel() {
+    this.router.navigate(['/'])
 
   }
 }
