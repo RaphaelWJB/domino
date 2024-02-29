@@ -1,0 +1,19 @@
+ 
+<app-header/>
+<main>
+    
+    <app-knowledgement/>
+    <app-experience/>
+    @defer(on viewport; on timer(5000s)) {
+       <app-projects/>
+    } @placeholder{
+        <section>
+            <h2>Carregando os projetos desenvolvido, aguarde...</h2>
+        </section>
+    } @error {
+        <section>
+            <h2>Houve um erro ao carregar os projetos, tente novamente...</h2>
+        </section>
+    }
+
+</main>

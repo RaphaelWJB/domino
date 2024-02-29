@@ -1,0 +1,22 @@
+<header>
+    <h2 mat-dialog-title>{{getData()?.title}}</h2>
+    <button>
+        <img src="assets/icons/dialog/close.svg"
+        alt="Botao para fechar a caixa de dialogo!"
+        (click)="closeDialog()">
+    </button>
+</header>
+
+
+    <mat-dialog-content>
+        <h3 mat-dialog-title>Descrição</h3>
+        <!-- Pegando a descrição que está pré-definida no TS do projects! -->
+        <article [innerHTML]="getData()?.description"></article>
+        <nav>
+            @for(item of getData()?.link; track item){  
+             <a href= "item.href" target="_blank" class="btn btn-primary">
+                
+            Conheça o projeto</a>   
+            }
+        </nav>
+    </mat-dialog-content>

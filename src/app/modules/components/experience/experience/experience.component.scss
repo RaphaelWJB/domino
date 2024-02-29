@@ -1,0 +1,58 @@
+:host{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2{
+        text-align: center;
+        font-size: 28px;
+        margin: 0 0 25px 0; 
+    }
+
+    details{
+        overflow: hidden;
+        margin-top: 10px;
+        background: var(--black-010);
+        border-radius: 7px;
+       
+}
+
+    summary,
+    article{
+        padding: 10px 20px;
+        
+        transition: 500ms;
+    }
+
+    summary{
+        cursor: pointer;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        background: var(--primary);
+
+        p{
+          
+          color: var(--black-010);
+          font-size: 15px;
+
+          margin: 0;
+          padding: 0;
+
+          flex-direction: column;
+
+
+          strong{
+            font-size: 17px;
+             
+          }
+
+        }
+
+        
+      }
+    }
+   
